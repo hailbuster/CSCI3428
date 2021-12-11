@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Online Mongo Client 2</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
+
+    <!--<link rel="stylesheet" href="./css/bootstrap.min.css" />
+    -->
+    <script src="./jquery-3.4.1.min.js"></script>
+   
+    
+    
+    
+    <script src="./OnlineMongoClient2.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Online Mongo Client 2</h1>
+      </div>
+
+      <div data-role="content">
+        <div data-role="controlgroup">
+          <input type="text" id="wthr" />
+          <button type="button" class="btn-danger" onclick="set()"
+            >Upload Weather Data</button
+          >
+          <button type="button" class="btn-success" onclick="get()"
+            >Download Previous Weather</button
+          >
+	  <div id="text1">this is the div</div>
+        </div>
+        <div id="out"></div>
+      </div>
+    </div>
+  </body>
+</html>

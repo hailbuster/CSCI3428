@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./../CSS/style2.css" />
+        <link rel="stylesheet" href="CSS/tablet.css" 
+              media="screen and (max-width: 900px)">
+        <title>Document</title>
+        <script src="./../Scripts/indexA.js"></script>
+    </head>
+    <!--    
+  Group 7 / Group 17 Authors:
+  
+  Jonathan Boyd (A00410716)
+  James W. Isaacs (A00324185)
+  Mahesh Khattri (A00432768)
+  Ayumu Saito (A00436125)
+  Shamatul Jannat Raisa (A00454233)
+  
+  
+  ======================== chap1page2.html ======================================
+
+  Due: end of term, fall 2021
+  This HTML submission is Phase 1 of Software Engineering.
+
+  We are creating a web-based storybook designed to assist in learning the 
+  Mi'kmaq language.  The storybook will contain an initial menu page, three 
+  choose-from-3 option pages and a final page that plays the story chosen.  It 
+  should integrate pictures, text and audio to immerse the students in an 
+  interactive environment. 
+  This software will use Java, JavaScript, Html5, CSS3 and react.js. There will
+  be audio for the words to be played so that users can correctly speak the 
+  words. HTML5 and CSS3 will be used to design the pages with visual inputs 
+  such as pictures. JavaScript will be used for page interaction such as words
+  and audio.  Nodejs/react.js will be used for server/backend development.
+
+  
+  == Contents ==
+
+    head
+    body
+      "page" created by a table"
+      "leftPane"
+        picture
+        page description
+        text block/audio
+        english toggle
+      "rightPane"
+        three pictures
+        three options
+        text of choice
+        previous page / next page
+            
+-->
+    <body>
+        <div id="mainPane">
+            <!-- start of table to display as book -->
+            <table>
+                <tr>
+                    <!-- start of leftPane -->
+                    <td id="leftPane">
+                        <!-- picture -->
+                        <div id="pictureContainer">
+                            <picture>
+                                <!-- https://i.ytimg.com/vi/WTMdsVQdjNI/maxresdefault.jpg // -->
+                                <img
+                                    id="storyPic"
+                                    src="../Images/browntrout.jpg"
+                                    alt="A Brown Trout"
+                                    />
+                            </picture>
+                        </div>
+                        <!-- page description -->
+                        <h1>chap1page2</h1>
+                        <p id="text">
+
+                            <br>
+                            "The text in this block will be in the Native Mi'kmaw language"
+                            <br>
+                            There will also be an audio reading of the text.
+                            <br><br>
+							meketa’j nanijik atoqwa’su.  This was enough for my family to have a big feast. 
+                            Down the river I saw a wounded...
+                        </p>
+                        <!-- english translation toggle -->
+                        <div id="buttonDiv">
+                            <!--<button type="button" onclick="alert('Translation in English.\n\
+                    I caught 5 trout. \n\
+                    This was enough for my family to have a big feast. \n\
+                    Down the river I saw a wounded...')">--> 
+                            <button type="button" onclick="englishAlertPg2()"> 
+                                Page Translation in English 
+                            </button>
+                        </div>
+                    </td>
+                    <!-- start of rightPane -->
+                    <td id="rightPane">
+                        <a id="page-number">2</a>
+                        <table>
+                            <!-- first row of 3 pictures -->
+                            <tr>
+                                <td class="thirtythree">
+                                    <!-- http://i.cbc.ca/1.3570330.1466118791!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/bears.jpg // -->
+                                    <img  class="img"
+                                          src="../Images/blackbear.jpg"
+                                          alt="A Black Bear"
+                                          />
+                                </td>
+                                <td class="thirtythree">
+                                    <img  class="img"
+                                          src="../Images/moose.jpg"
+                                          alt="A Moose"
+                                          />
+                                </td>
+                                <td class="thirtythree">
+                                    <img  class="img"
+                                          src="../Images/eagle.jpg"
+                                          alt="An Eagle"
+                                          />
+                                </td>
+                            </tr>
+                            <!-- second row of 3 button options -->
+                            <tr>
+                                <td>
+                                    <input
+                                        onclick="getValue('Muin (Bear)')"
+                                        class="select-option"
+                                        type="button"
+                                        name="options"
+                                        value="muin"
+                                        />
+                                </td>
+                                <td>
+                                    <input
+                                        onclick="getValue('Tia m (Moose)')"
+                                        class="select-option"
+                                        type="button"
+                                        name="options"
+                                        value="tia'm"
+                                        />
+                                </td>
+                                <td>
+                                    <input
+                                        onclick="getValue('Kitpu (Eagle)')"
+                                        class="select-option"
+                                        type="button"
+                                        name="options"
+                                        value="kitpu"
+                                        />
+                                </td>
+                            </tr>
+
+                            <!-- <button id="audio">Audio</button>
+                            <button id="repeat">Repeat</button> -->
+                            
+                            <!-- start of row for txt choice and page selection -->
+                            <tr>
+                                <td id="choiceText">
+                                        <br>
+                                        <br>
+                                        text of their choice: 
+                                        <br>
+                                       <!-- &nbsp; -->
+                                    </td>
+                                    <td>
+                                    <button id="previous" onclick="location.href = 'chap1page1.html'">
+                                        ←
+                                        <br>
+                                        <br>
+                                        PREVIOUS
+                                    </button>
+                                </td>
+                                <td>
+                                    <button id="next" onclick="location.href = 'chap1page3.html'">
+                                        →
+                                        <br>
+                                        <br>
+                                        Next
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+
+                </tr>
+            </table>
+        </div> 
+        <!-- copyright info -->
+        <div class="footer">
+            Designed and developed by &copy; 2021 James W. Isaacs, Jay Boyd, Ayumu Saito,
+            Mahesh Khatri, Raisa Shamatul (For Saint Mary's University and the Eskasoni Mi'kmaw Nation).
+
+        </div>
+
+    </body>
+</html>

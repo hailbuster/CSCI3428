@@ -1,0 +1,23 @@
+BASE DIRECTORY:
+
+
+mongotest - directory composed of the files you gave me and other works to get connection.  
+	Also updated jquery and downloaded proper 3.4.1 doc.
+
+public_html - main group folder for docs
+	node_quickstart - folder working on mongo as well
+	Pages - did a bit of work on chap2page1.html (plan is to revamp and tie last page into the single html doc instead of what's currently there)
+	Scripts - more mongo/node testing and server files
+		- db.js, P4Server.js, quickServ.js and server.js are files I was working on
+		- index.js is composed by myself and Yumu's contribution of the last page tie in.
+		- testdel.sh (test deletion shell script to atlas - works)
+		- testfind.sh (test find shell script to atlas - works)
+		- testpost.sh (test post shell script to atlas - works)
+
+React - Yumu's work (kept for the intro/page selection)
+Scripts - old scripts files(this includes the images that were numbered in order to have an easier time to select/sort/find through index.js.  
+	These were the files I believed the team already stored in phase 4 folder on the shared drive.
+Server - copy of the node server I created (based on mobile app's designs)
+main.py - server connections from another class
+mongoDB(local) - copy of my local work with the mongodb
+npm-debug.log is logs from installations etc
