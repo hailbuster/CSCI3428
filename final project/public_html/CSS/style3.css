@@ -1,0 +1,300 @@
+/*
+  Group 7 / Group 17 Authors:
+  
+  Jonathan Boyd (A00410716)
+  James W. Isaacs (A00324185)
+  Mahesh Khattri (A00432768)
+  Ayumu Saito (A00436125)
+  Shamatul Jannat Raisa (A00454233)
+  
+  
+  ======================== style.css ======================================
+  Due: end of term, fall 2021
+  This CSS submission is Phase 1 of Software Engineering.
+  We are creating a web-based storybook designed to assist in learning the 
+  Mi'kmaq language.  The storybook will contain an initial menu page, three 
+  choose-from-3 option pages and a final page that plays the story chosen.  It 
+  should integrate pictures, text and audio to immerse the students in an 
+  interactive environment. 
+  This software will use Java, JavaScript, Html5, CSS3 and react.js. There will
+  be audio for the words to be played so that users can correctly speak the 
+  words. HTML5 and CSS3 will be used to design the pages with visual inputs 
+  such as pictures. JavaScript will be used for page interaction such as words
+  and audio.  Nodejs/react.js will be used for server/backend development.
+  
+  == Contents ==
+    table
+    storyPic
+    img
+    button
+    mainPane
+    rightPane
+    leftPane
+    text
+    choiceTable
+    button audio/repeat
+    buttonDiv
+    button next/previous/home
+    choiceText
+    arrow
+    final-page
+    label 
+    select-option
+    button focus
+    page-number
+    buttonHint
+    img
+    td
+    imageP1
+    thirtythree
+    
+    .button
+    #TableOfContents
+    thStyle1 - 4
+    
+    
+*/
+
+* {
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+/* sets table dimentions */
+table {
+  width: 100%;
+  border-collapse: collapse;
+background-color:Turqoise;
+}
+
+/*adjusts story picture position */
+#storyPic,
+.storypic {
+  position: relative;
+  width: 80%;
+  padding: 5px;
+}
+
+/* adjusts img position */
+img {
+  position: relative;
+  width: 80%;
+  padding-top: 5px;
+}
+
+/* adjusts button position */
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius:12px;
+  
+}
+
+/* adjusts mainPane position */
+#mainPane {
+  width: 90%;
+  border: 3px solid blue;
+  padding: 20px;
+  margin: 20px;
+  display: table;
+  text-align: center;
+}
+
+/* adjusts rightPane/leftPane width and boarder */
+#rightPane,
+#leftPane {
+  width: 50%;
+  border: 2px solid black;
+}
+
+/* adjusts text */
+#text,
+.text {
+  border: 1px solid black;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 15px;
+  background-color: White;
+}
+
+/* adjusts choice table */
+#choiceTable {
+  border: 1px solid black;
+  margin-bottom: 100px;
+}
+
+/* adjusts audio button position */
+button#audio {
+  width: 120px;
+  height: 70px;
+  margin-top: 80px;
+  margin-right: 50px;
+}
+
+/* adjusts repeat button position */
+button#repeat {
+  width: 240px;
+  height: 70px;
+  margin-left: 50px;
+}
+
+/* adjusts cursor on english toggle */
+#buttonDiv > button {
+  width: 29vw;
+  height: 12vh;
+  cursor: help;
+}
+
+/* setup for buttons: previous, next, home */
+button#next,
+button#previous,
+button#home {
+  /* setup for buttons: previous, next, home */
+
+  margin-top: 15%;
+  /* margin-left: 3rem; */
+
+  height: 70px;
+  width: 160px;
+  cursor: alias;
+  background-color:#ccffff;
+  color: black;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+/* adjusts position of choiceText */
+#choiceText {
+  float: left;
+  border: 2px solid black;
+  margin-left: 10%;
+  margin-right: 40px;
+  margin-top: 10.6%;
+  background-color: Bisque;
+  height: 80px;
+  width: 240px;
+}
+body{
+ background-color:HoneyDew;
+}
+/* adjusts arrow */
+#arrow {
+  font-size: large;
+}
+
+/* adjusts final page layout */
+#final-page {
+  margin-top: 15%;
+  height: 55px;
+  width: 60px;
+  background-color: Linen;
+}
+
+/* adjusts label */
+label {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* adjusts select-option */
+.select-option {
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width: 12vw;
+  cursor: grab;
+}
+
+/* adjusts button focus */
+input[type="button"]:focus {
+  border: 1px solid;
+  background: rgb(139, 139, 221);
+}
+
+/* adjusts page-number */
+#page-number {
+  position: absolute;
+  top: 4%;
+  right: 75px;
+
+  margin: 2px;
+}
+
+/* adjusts buttonHint */
+#buttonHint {
+  position: absolute;
+  width: 35vw;
+  height: 8vh;
+  left: 6.3rem;
+  cursor: help;
+  background-color: White;
+}
+
+/* adjusts img */
+#img {
+  position: relative;
+  top: -7vh;
+}
+
+td > .images {
+  border: 3px solid rgb(216, 213, 245);
+  /* width: 150px; 
+  height: 100px; */
+
+  /*Scale down will take the necessary specified space without stretching
+  */
+  /* object-fit: scale-down; */
+}
+
+#imgP1 {
+  position: absolute;
+  top: 50px;
+}
+
+/* adjusts width for td element (table data) in tables*/
+.thirtythree {
+  width: 33%;
+}
+
+/* button updates removed from inline html doc line 15-16*/
+.button{
+              
+                color: Black;
+                padding: 15px 30px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+				background-color: White;
+				border: 2px solid #7B68EE;
+            }
+            
+/* h1 style removed from inline html doc line 96*/
+#TableOfContents {
+  font-size: 60px;
+}
+
+/* table header style removed from inline html doc line 101*/
+#thStyle1{
+  width:15%;
+}
+
+/* table header style removed from inline html doc line 104*/
+#thStyle2{
+  width:40%;
+}
+
+/* table header style removed from inline html doc line 107*/
+#thStyle3{
+  width:30%;
+}
+
+/* table header style removed from inline html doc line 110*/
+#thStyle4{
+  width:15%;
+}
+

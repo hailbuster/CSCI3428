@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    background: #f1f5f8;
+    color: #222;
+}
+
+.booklist {
+    width: 90vw;
+    max-width: 1170px;
+    margin: 5rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+#bookCover {
+    width: 180px;
+}
+
+.book {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .booklist {
+        grid-template-columns: repeat(3, 1fr);
+        /* align-items: start;  /*This will only extend the grid to only where element exits
+       / */
+    }
+}

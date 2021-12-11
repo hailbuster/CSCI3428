@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles-end.css">
+    <script src="./../Scripts/index2.js"></script>
+    <script src="./../Scripts/index.js"></script>
+    <script src="./../Scripts/photoRotation.js"></script>
+    <title>The Mi'kmaq Storybook</title>
+</head>
+
+<body onload="startRotation()">
+    <div id="mainPane">
+        <div id="leftPane">
+            <div class="center-align-vertical">
+                <div id="story-picture-container">
+                    <picture id="story-picture">
+                        <img id="placeholder" src="x" alt="Rotation of choices" />
+                    </picture>
+                </div>
+                <div id="story-title-container">
+                    <h1>Our story has reached its end. </h1>
+                </div>
+                <div id="story-container">
+                    <p>
+                        <br>
+
+                        "The text in this block will be in the Native Mi'kmaw language"
+                        <br>
+                        There will also be an audio reading of the text.
+                        <br><br>
+                        (Replay) Our story begins down by the river.
+                        It is a sunny day and I decided to go to the river
+                        to do some <em>fishing.</em>
+                        <br>
+                        I caught 5 trout. This was enough
+                        for my family to have a big feast. Down the river
+                        I saw a wounded <em>Bear.</em>
+                        <br>
+                        I saw that the bear was weak and hungry,
+                        so I decided to <em>Give fish.</em>
+                        <br>
+                        I gave the bear 2 fish, and he began to eat.
+                        After eating the fish, the bear began to walk away.
+                        Looking back the bear nodded its head at me, and I was happy.
+                        I went home and told my family <em>
+                            The truth. </em>
+                        <br>
+                        My family was proud that I helped the wounded bear,
+                        but they told me to be careful next time because it
+                        may be dangerous to feed wounded animals.
+                        I made a new friend that day with the bear and still
+                        had enough fish for my family to eat.
+                    </p>
+                </div>
+                <div id="button-container">
+                    <button id="hint-button" onclick="englishAlertPg2()">
+                        Page Translation in English
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="rightPane">
+            <div class="center-align-vertical">
+                <div id="choice-grid">
+                    <div class="choice-container">
+                        <h1>
+                            The Mi'kmaq Storybook. <br />
+                            Told in the language of Mi'kmaw. <br />
+                            Using the Smith-Francis translations.
+                        </h1>
+
+                    </div>
+
+                </div>
+
+                <div id="">
+                    <picture id="end-page-logo">
+                        <img src="https://images.squarespace-cdn.com/content/v1/56a7b5951c1210756e3465c1/1622660877900-KPNSB04Y5QXPILQD1AHX/SMU_Logo.jpg'"
+                            alt="SMU logo">
+                    </picture>
+                    <h1>Group-17</h1>
+                </div>
+
+
+                <div id="page-button-container">
+                    <button onclick="location.href = 'chap2page1.html'">Restart Story</button>
+                    <button onclick="location.href = '../index.html'">Home</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            Designed and developed by &copy; 2021 James W. Isaacs, Jay Boyd, Ayumu Saito,
+            Mahesh Khatri, Raisa Shamatul (For Saint Mary's University and the Eskasoni Mi'kmaw Nation).
+        </footer>
+    </div>
+
+</body>
+
+</html>

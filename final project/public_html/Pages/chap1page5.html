@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./../CSS/style.css" />
+        <link rel="stylesheet" href="CSS/tablet.css" 
+              media="screen and (max-width: 900px)">
+        <title>Document</title>
+        <script src="./../Scripts/indexA.js"></script>
+        <script src="./../Scripts/photoRotation.js"></script>
+    </head>
+    <!--
+  Group 7 / Group 17 Authors:
+  
+  Jonathan Boyd (A00410716)
+  James W. Isaacs (A00324185)
+  Mahesh Khattri (A00432768)
+  Ayumu Saito (A00436125)
+  Shamatul Jannat Raisa (A00454233)
+  
+  ======================== chap1page5.html =====================================
+
+  Due: end of term, fall 2021
+  This HTML submission is Phase 1 of Software Engineering.
+
+  We are creating a web-based storybook designed to assist in learning the 
+  Mi'kmaq language.  The storybook will contain an initial menu page, three 
+  choose-from-3 option pages and a final page that plays the story chosen.  It 
+  should integrate pictures, text and audio to immerse the students in an 
+  interactive environment. 
+  This software will use Java, JavaScript, Html5, CSS3 and react.js. There will
+  be audio for the words to be played so that users can correctly speak the 
+  words. HTML5 and CSS3 will be used to design the pages with visual inputs 
+  such as pictures. JavaScript will be used for page interaction such as words
+  and audio.  Nodejs/react.js will be used for server/backend development.
+
+  
+  == Contents ==
+
+    head
+    body
+      "page" created by a table"
+      "leftPane"
+        picture
+        page description
+        text block/audio
+        english toggle / review of story
+      "rightPane"
+        three pictures
+        three options
+        text of choice
+        next page / home page
+            
+  -->
+    <body onload="startRotation()">
+        <div id="mainPane">
+            <!-- start of table to display as book -->
+            <table>
+                <tr>
+                    <!-- start of leftPane -->
+                    <td id="leftPane">
+                        <!-- picture -->
+                        <div id="pictureContainer">
+                            <picture id="storyPic">
+                                <!--id="placeholder" src="x"-->
+                                <img id="placeholder"
+                                    src="x"
+                                    alt="Rotation of choices"
+                                    />
+                            </picture>
+                        </div>
+                        <!-- page description -->
+                        <h1>Our story has reached its end. </h1>
+                        <p id="text"> 
+                            <br>
+
+                            "The text in this block will be in the Native Mi'kmaw language"
+                            <br>
+                            There will also be an audio reading of the text.
+                            <br><br>
+                            (Replay) Our story begins down by the river. 
+                            It is a sunny day and I decided to go to the river 
+                            to do some <em>fishing.</em> 
+                            <br>
+                            I caught 5 trout. This was enough
+                            for my family to have a big feast. Down the river 
+                            I saw a wounded <em>Bear.</em> 
+                            <br>
+                            I saw that the bear was weak and hungry, 
+                            so I decided to <em>Give fish.</em> 
+                            <br>
+                            I gave the bear 2 fish, and he began to eat. 
+                            After eating the fish, the bear began to walk away. 
+                            Looking back the bear nodded its head at me, and I was happy. 
+                            I went home and told my family <em>
+                                The truth. </em>
+                            <br>
+                            My family was proud that I helped the wounded bear, 
+                            but they told me to be careful next time because it
+                            may be dangerous to feed wounded animals. 
+                            I made a new friend that day with the bear and still
+                            had enough fish for my family to eat.
+                        </p>
+                        <!-- english translation toggle / review of story -->
+                        <div id="buttonDiv">
+                            <button type="button" onclick="alert('(Replay)\n\
+Our story begins down by the river. It is a sunny day and I decided to go to the river to do some fishing.\n\
+I caught 5 trout. This was enough for my family to have a big feast. Down the river I saw a wounded Bear.\n\
+I saw that the bear was weak and hungry,so I decided to Give fish. I gave the bear 2 fish, and he began to eat. \n\
+After eating the fish, the bear began to walk away. Looking back the bear nodded its head at me, and I was happy. \n\
+I went home and told my family The truth. <br> My family was proud that I helped the wounded bear,\n\
+but they told me to be careful next time because it may be dangerous to feed wounded animals.\n\
+I made a new friend that day with the bear and still had enough fish for my family to eat.')">
+                                Page Translation in English<br>
+
+                            </button>
+                        </div>
+                    </td>
+                    <!-- start of rightPane -->
+                    <td id="rightPane">
+                        <!-- description -->
+                        <h1>
+                            The Mi'kmaq Storybook. <br />
+                            Told in the language of Mi'kmaw. <br />
+                            Using the Smith-Francis translations.
+                        </h1>
+                        <!-- SMU logo and ref to group -->
+                        <div id="pictureContainer2">
+                            <picture>
+                                <img
+                                    class="storyPic"
+                                    src="https://images.squarespace-cdn.com/content/v1/56a7b5951c1210756e3465c1/1622660877900-KPNSB04Y5QXPILQD1AHX/SMU_Logo.jpg'"
+                                    alt="SMU logo">
+                            </picture><h1> Group-17</h1>
+                        </div>
+                        <!-- final comments -->
+                        <p class="text">
+                            We wish to thank you for joining us on our journey through the Mi'kmaq Language.
+                            <br> Wela'lioq
+                            <br>
+                            Content Created by: James W. Isaacs, Jay Boyd, Mahesh
+                            Khattri, Ayumu Saito, Shamatul Jannat Raisa
+                            <br>
+                            <br>
+                            For the Eskasoni Tribe
+                        </p>
+                        <table>
+                            <!-- start of row for page selection or homepage -->
+                            <tr>
+                                <td>
+                                    <button id="next" onclick="alert('Congratulation! You finished the book.')">
+                                        →
+                                        <br>
+                                        <br>
+                                        NEXT
+                                    </button>
+                                </td>
+                                <td>
+                                    <button id="home" onclick="location.href = '../index.html'">
+                                        ←
+                                        <br>
+                                        <br>
+                                        Home Page
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- copyright info -->
+        <div class="footer">
+            Designed and developed by &copy; 2021 James W. Isaacs, Jay Boyd, Ayumu Saito,
+            Mahesh Khatri, Raisa Shamatul (For Saint Mary's University and the Eskasoni Mi'kmaw Nation).
+
+        </div>
+    </body>
+</html>

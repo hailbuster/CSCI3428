@@ -1,0 +1,256 @@
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3099
+    at Server.setupListenHandle [as _listen2] (net.js:1280:14)
+    at listenInCluster (net.js:1328:12)
+    at Server.listen (net.js:1415:7)
+    at Function.listen (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/students_ae20/m_khattri/public_html/server.js:116:5)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1307:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:834:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3099
+    at Server.setupListenHandle [as _listen2] (net.js:1280:14)
+    at listenInCluster (net.js:1328:12)
+    at Server.listen (net.js:1415:7)
+    at Function.listen (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/students_ae20/m_khattri/public_html/server.js:116:5)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1307:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:834:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)
+Nodesjs server running on PORT: 3099
+MongoDB connected
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3099
+    at Server.setupListenHandle [as _listen2] (net.js:1280:14)
+    at listenInCluster (net.js:1328:12)
+    at Server.listen (net.js:1415:7)
+    at Function.listen (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/students_ae20/m_khattri/public_html/server.js:116:5)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1307:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:834:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)
+Nodesjs server running on PORT: 3099
+MongoDB connected
+Nodesjs server running on PORT: 3099
+MongoDB connected
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3099
+    at Server.setupListenHandle [as _listen2] (net.js:1280:14)
+    at listenInCluster (net.js:1328:12)
+    at Server.listen (net.js:1415:7)
+    at Function.listen (/home/students_ae20/m_khattri/public_html/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/home/students_ae20/m_khattri/public_html/server.js:116:5)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+Emitted 'error' event at:
+    at emitErrorNT (net.js:1307:8)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:834:11)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:623:3)
+[Object: null prototype] {
+  file1:
+   [ { fieldname: 'file1',
+       originalname: 'Web capture_8-11-2021_134057_ugdev.cs.smu.ca.jpeg',
+       encoding: '7bit',
+       mimetype: 'image/jpeg',
+       destination: 'IMAGE_DIR',
+       filename: 'file1_1636907570526.jpeg',
+       path: 'IMAGE_DIR/file1_1636907570526.jpeg',
+       size: 281878 } ],
+  file2:
+   [ { fieldname: 'file2',
+       originalname: 'multerOP.txt',
+       encoding: '7bit',
+       mimetype: 'text/plain',
+       destination: 'TEXT',
+       filename: 'file2_1636907570708.txt',
+       path: 'TEXT/file2_1636907570708.txt',
+       size: 2225 } ],
+  file3:
+   [ { fieldname: 'file3',
+       originalname: 'multerOP.txt',
+       encoding: '7bit',
+       mimetype: 'text/plain',
+       destination: 'TEXT',
+       filename: 'file3_1636907570709.txt',
+       path: 'TEXT/file3_1636907570709.txt',
+       size: 2225 } ],
+  file4:
+   [ { fieldname: 'file4',
+       originalname: 'Untitled.png',
+       encoding: '7bit',
+       mimetype: 'image/png',
+       destination: 'IMAGE_DIR',
+       filename: 'file4_1636907570711.png',
+       path: 'IMAGE_DIR/file4_1636907570711.png',
+       size: 314308 } ],
+  file5:
+   [ { fieldname: 'file5',
+       originalname: 'Untitled.png',
+       encoding: '7bit',
+       mimetype: 'image/png',
+       destination: 'IMAGE_DIR',
+       filename: 'file5_1636907570958.png',
+       path: 'IMAGE_DIR/file5_1636907570958.png',
+       size: 314308 } ],
+  file6:
+   [ { fieldname: 'file6',
+       originalname: 'Web capture_8-11-2021_134057_ugdev.cs.smu.ca.jpeg',
+       encoding: '7bit',
+       mimetype: 'image/jpeg',
+       destination: 'IMAGE_DIR',
+       filename: 'file6_1636907571227.jpeg',
+       path: 'IMAGE_DIR/file6_1636907571227.jpeg',
+       size: 281878 } ],
+  file7:
+   [ { fieldname: 'file7',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file7_1636907571386.mp3',
+       path: 'AUDIO/file7_1636907571386.mp3',
+       size: 4554598 } ],
+  file8:
+   [ { fieldname: 'file8',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file8_1636907574716.mp3',
+       path: 'AUDIO/file8_1636907574716.mp3',
+       size: 4554598 } ],
+  file9:
+   [ { fieldname: 'file9',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file9_1636907578049.mp3',
+       path: 'AUDIO/file9_1636907578049.mp3',
+       size: 4554598 } ] }
+inserted
+[Object: null prototype] {
+  file1:
+   [ { fieldname: 'file1',
+       originalname: 'Web capture_8-11-2021_134057_ugdev.cs.smu.ca.jpeg',
+       encoding: '7bit',
+       mimetype: 'image/jpeg',
+       destination: 'IMAGE_DIR',
+       filename: 'file1_1636907619997.jpeg',
+       path: 'IMAGE_DIR/file1_1636907619997.jpeg',
+       size: 281878 } ],
+  file2:
+   [ { fieldname: 'file2',
+       originalname: 'multerOP.txt',
+       encoding: '7bit',
+       mimetype: 'text/plain',
+       destination: 'TEXT',
+       filename: 'file2_1636907620192.txt',
+       path: 'TEXT/file2_1636907620192.txt',
+       size: 2225 } ],
+  file3:
+   [ { fieldname: 'file3',
+       originalname: 'multerOP.txt',
+       encoding: '7bit',
+       mimetype: 'text/plain',
+       destination: 'TEXT',
+       filename: 'file3_1636907620193.txt',
+       path: 'TEXT/file3_1636907620193.txt',
+       size: 2225 } ],
+  file4:
+   [ { fieldname: 'file4',
+       originalname: 'Untitled.png',
+       encoding: '7bit',
+       mimetype: 'image/png',
+       destination: 'IMAGE_DIR',
+       filename: 'file4_1636907620195.png',
+       path: 'IMAGE_DIR/file4_1636907620195.png',
+       size: 314308 } ],
+  file5:
+   [ { fieldname: 'file5',
+       originalname: 'Untitled.png',
+       encoding: '7bit',
+       mimetype: 'image/png',
+       destination: 'IMAGE_DIR',
+       filename: 'file5_1636907620634.png',
+       path: 'IMAGE_DIR/file5_1636907620634.png',
+       size: 314308 } ],
+  file6:
+   [ { fieldname: 'file6',
+       originalname: 'Web capture_8-11-2021_134057_ugdev.cs.smu.ca.jpeg',
+       encoding: '7bit',
+       mimetype: 'image/jpeg',
+       destination: 'IMAGE_DIR',
+       filename: 'file6_1636907621125.jpeg',
+       path: 'IMAGE_DIR/file6_1636907621125.jpeg',
+       size: 281878 } ],
+  file7:
+   [ { fieldname: 'file7',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file7_1636907621357.mp3',
+       path: 'AUDIO/file7_1636907621357.mp3',
+       size: 4554598 } ],
+  file8:
+   [ { fieldname: 'file8',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file8_1636907624652.mp3',
+       path: 'AUDIO/file8_1636907624652.mp3',
+       size: 4554598 } ],
+  file9:
+   [ { fieldname: 'file9',
+       originalname: 'group 7.mp3',
+       encoding: '7bit',
+       mimetype: 'audio/mpeg',
+       destination: 'AUDIO',
+       filename: 'file9_1636907627950.mp3',
+       path: 'AUDIO/file9_1636907627950.mp3',
+       size: 4554598 } ] }
+inserted

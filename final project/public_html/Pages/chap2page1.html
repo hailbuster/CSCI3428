@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script src="./../Scripts/jquery-1.11.1.min.js"></script>
+    <script src="./../Scripts/jquery.mobile-1.4.5.min.js"></script>
+  
+    <script src="./../Scripts/index.js"></script>
+    <title>The Mi'kmaq Storybook</title>
+</head>
+
+<body onload="pagePull()">
+    <div id="story-page">
+        <div class="mainPane">
+            <div class="leftPane">
+                <div class="center-align-vertical">
+                    <div id="story-picture-container" class="story-picture-container">
+                        <!-- story picture [1]-->
+                        <!--removed the resize function to get rid of fixed dimension-->
+                        <picture id="story-picture" class="story-picture">
+                        </picture>
+                    </div>
+                    <div id="story-title-container" class="story-title-container">
+                        <h1 id="ttxt">
+
+                        </h1>
+                    </div>
+                    <!-- text display of story [2] -->
+                    <div id="story-container" class="story-container">
+
+                    </div>
+                    <div class="button-container">
+                        <!-- english toggle [3]-->
+                        <button id="hint-button" onclick="englishAlert()">
+                            Page Translation in English
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="rightPane">
+                <div class="center-align-vertical">
+                    <div class="choice-grid">
+                        <div class="choice-container">
+                            <!-- 1st choice picture [4]-->
+                            <picture id="picture1"></picture>
+                            <!-- 1st choice audio id = audio1 [5]-->
+                            <!-- 1st choice text id=text1 [6]-->
+                            <button id="btxt1" onclick="getSelect1()" class="select-option" type="button" name="options"
+                                value="muin">
+                            </button>
+                        </div>
+                        <div class="choice-container">
+                            <!-- 2nd choice picture [7]-->
+                            <picture id="picture2"></picture>
+                            <!-- 2nd choice audio id = audio2 [8]-->
+                            <!-- 2nd choice text id= text2 [9]-->
+                            <button id="btxt2" onclick="getSelect2()" class="select-option" type="button" name="options"
+                                value="tia'm">Tia'm
+                            </button>
+                        </div>
+                        <div class="choice-container">
+                            <!-- 3rdd choice picture [10]-->
+                            <picture id="picture3"></picture>
+                            <!--3rd choice audio id = audio3 [11]-->
+                            <!--3rd choice text id=text3 [12]-->
+                            <button id="btxt3" onclick="getSelect3()" class="select-option" type="button" name="options"
+                                value="gitpu">
+                                Gitpu
+                            </button>
+                        </div>
+                    </div>
+                    <!--End of choice-grid-->
+                    <div id="text-of-choice-container">
+                        <table>
+                            <tr>
+                                <td>
+                                    &emsp; Text of choice
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="choiceText">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="audio-button-container">
+                        <button> Record Audio</button>
+                        <button> Play Audio</button>
+                    </div>
+
+                    <div class="page-button-container">
+                        <!--Please keep this empty div-->
+                        <div></div>
+                        <button onclick="changePageBack()">previous</button>
+                        <button onclick="changePageForward()">next</button>
+                        <div></div>
+                        <!--Please keep this empty div-->
+                    </div>
+                </div>
+            </div>
+            <footer>
+                Designed and developed by &copy; 2021 James W. Isaacs, Jay Boyd, Ayumu Saito,
+                Mahesh Khatri, Raisa Shamatul (For Saint Mary's University and the Eskasoni Mi'kmaw Nation).
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!-- onload="startRotation()" -->
+
+    <div id="end-page">
+        <div class="mainPane">
+            <div class="leftPane">
+                <div class="center-align-vertical">
+                    <div id="story-picture-container" class="story-picture-container">
+                        <picture id="summary-picture" class="story-picture">
+                            <img id="placeholder" src="x" alt="Rotation of choices" />
+                        </picture>
+                    </div>
+                    <div class="story-title-container">
+                        <h1>Our story has reached its end. </h1>
+                    </div>
+                    <div class="story-container">
+                        <p id="summary">
+                        </p>
+                    </div>
+                    <div class="button-container">
+                        <button id="hint-button" onclick="englishAlertPg2()">
+                            Page Translation in English
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="rightPane">
+                <div class="center-align-vertical">
+                    <div class="choice-grid">
+                        <div class="choice-container">
+                            <h1>
+                                The Mi'kmaq Storybook. <br />
+                                Told in the language of Mi'kmaw. <br />
+                                Using the Smith-Francis translations.
+                            </h1>
+
+                        </div>
+
+                    </div>
+
+                    <div id="">
+                        <picture id="end-page-logo">
+                            <img src="https://images.squarespace-cdn.com/content/v1/56a7b5951c1210756e3465c1/1622660877900-KPNSB04Y5QXPILQD1AHX/SMU_Logo.jpg'"
+                                alt="SMU logo">
+                        </picture>
+                        <h1>Group-17</h1>
+                    </div>
+
+
+                    <div class="page-button-container">
+                        <div></div>
+                        <button onclick="location.href = 'chap2page1.html'">Restart Story</button>
+                        <button onclick="location.href = '../index.html'">Home</button>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                Designed and developed by &copy; 2021 James W. Isaacs, Jay Boyd, Ayumu Saito,
+                Mahesh Khatri, Raisa Shamatul (For Saint Mary's University and the Eskasoni Mi'kmaw Nation).
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

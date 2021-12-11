@@ -1,0 +1,2 @@
+body{margin:0;font-family:"Comic Sans MS","Comic Sans";-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}code{font-family:source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace}*{margin:0;padding:0;box-sizing:border-box;text-align:center}body{background:#f1f5f8;color:#222}.booklist{width:90vw;max-width:1170px;margin:5rem auto;display:grid;grid-gap:2rem;gap:2rem}#bookCover{width:180px}.book{text-align:center}@media screen and (min-width:768px){.booklist{grid-template-columns:repeat(3,1fr)}}
+/*# sourceMappingURL=main.453397cf.chunk.css.map */

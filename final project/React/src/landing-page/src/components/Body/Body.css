@@ -1,0 +1,184 @@
+* {
+    font-family: "Comic Sans MS", "Comic Sans";
+    font-weight: bold;
+}
+
+#backGround {
+    background: #d1d7db;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* height: calc(100% - 80px); */
+    min-height: 600px;
+    /* height: 750px; */
+    text-align: center;
+}
+
+.mainPane {
+    position: auto;
+    vertical-align: middle;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: -4px;
+    border-radius: 90px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    height: 95%;
+    z-index: -1;
+}
+
+.mainPane:before {
+    animation: fade-slide-down 1s 0.1s cubic-bezier(0, 0.4, 0, 0.1) forwards;
+    background: url("https://i0.wp.com/capebretongallery.com/wp-content/uploads/2019/03/7103171015-Eskasoni-Mountain-Road-Pano.jpg?fit=1600%2C533&ssl=1")
+        no-repeat bottom;
+    background-size: cover;
+    opacity: 0;
+    border-radius: 90px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+}
+
+@keyframes fade-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#buttonStart {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    /* text-transform: uppercase; */
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+}
+
+#textStart {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    color: #fff;
+    font-size: 35px;
+}
+
+#buttonStart {
+    border-radius: 20px;
+    background-color: #5ca1e1;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    padding: 16px;
+    width: 300px;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: 50%;
+}
+
+@media screen and (max-width: 700px) {
+    #textStart {
+        margin-bottom: -20px;
+        /* MIGHT HAVE TO CHANGE THIS ACCORDING TO THE LENGTH OF THE TEXT SO THAT BUTTON LOOKS FINE ON MOBILE */
+    }
+    #buttonStart {
+        inline-size: 150px;
+        overflow-wrap: break-word;
+        border-radius: 20px;
+        background-color: #5ca1e1;
+        border: none;
+        color: #fff;
+        text-align: center;
+        font-size: 32px;
+        padding: 16px;
+        width: 300px;
+        transition: all 0.5s;
+        cursor: pointer;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+    }
+
+    #buttonStart:after {
+        font-size: 40px;
+        content: "\279C"; /*This is for right arrow*/
+        position: absolute;
+        opacity: 0;
+        top: 14px !important;
+        right: -300px;
+        padding-right: 15px;
+        transition: 0.5s;
+    }
+}
+
+/* @media screen and (max-height: 601px) {
+    #buttonStart {
+        border-radius: 20px;
+        background-color: #5ca1e1;
+        border: none;
+        color: #fff;
+        text-align: center;
+        font-size: 32px;
+        padding: 16px 20px;
+        width: 300px;
+        transition: all 0.5s;
+        cursor: pointer;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+        position: relative;
+        top: 230px;
+        bottom: 30px;
+    }
+} */
+
+#buttonStart {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#buttonStart:after {
+    font-size: 40px;
+    content: "\279C"; /*This is for right arrow*/
+    position: absolute;
+    opacity: 0;
+    top: 14px;
+    left: 210px;
+    right: -200px;
+    /* left: 330;
+    right: -300px; */
+    padding-right: 15px;
+    transition: 0.5s;
+}
+
+#buttonStart:hover {
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+#buttonStart:hover:after {
+    opacity: 1;
+    right: 10px;
+}
