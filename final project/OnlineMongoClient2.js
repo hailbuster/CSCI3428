@@ -6,6 +6,9 @@
 // When two people try to use the same port an error results.
 var SERVER_URL = "http://ugdev.cs.smu.ca:3721";
 
+//total variable is the combined json structure of a page
+var total;
+
 
 
 
@@ -155,9 +158,64 @@ function combine(){
   var one = $("#stuff").val().replace('C:\\fakepath\\', '');
   var two = $("#stuff2").val().replace('C:\\fakepath\\', '');
   var three = $("#stuff3").val().replace('C:\\fakepath\\', '');
+  var name = $("#storyname").val();
+  var pagenum = $("#page").val();
+  var pagenumber = parseInt(pagenum);
 
-  var total = { start: one, middle: two, end: three};
+  total = { start: one, middle: two, end: three, storyname: name, page: pagenumber};
   console.log(total);
   
+  createPage();
   
+}
+
+function createPage() {
+  // Create JSON object to be saved in the MongoDB database
+  //var name = $("#wthr").val();
+  //console.log("name: ");
+  //console.log(name);
+  //var story = { storyname: name, page: 1 };
+  //console.log("story: ");
+  //console.log(story);
+  
+  console.log(total);
+  console.log("in createPage");
+
+  // jQuery ($) post function
+  //
+  // First Parameter : The complete URL (not just the root).
+  //                   It's important you understand that this URL only exists
+  //                   because OnlineMongo2.js is running on the server.
+  //
+  // Second Parameter: The JSON object to be saved in the MongoDB database
+  //
+  // Third Parameter : The callback function.
+  //                   The convention is to have it as the last argument in the function call.
+  //                   insertCallback is run only after $.post has finished and returned a valid
+  //                   result with no errors having occured.
+  //
+  // Special Notes   : .fail(errorCallback) is executed when there is an error that occured.
+  //                   This is a syntax particular to jQuery used on the client-side,
+  //                   that you won't see on the server-side. Errors are handled
+  //                   differently on the server-side.
+  //
+  $.post(SERVER_URL + "/doPageCreate", total, createPageCallback).fail(
+    errorCallback
+  );
+}
+
+// The callback function called insertCallback executed when no errors occur.
+//
+// First Parameter : data is the JSON object received from the server.
+//                   The special relationship callbacks have with the function
+//                   in which they appear as the last argument, enables the
+//                   JSON object "data" to be defined and used the way it is.
+//
+function createPageCallback(data) {
+  console.log('URL ending with "/doPageCreate" returned ' + data);
+
+if (data == "duplicate page!"){
+  alert("ERROR: Duplicate page - page info not saved!");
+  }
+  else {alert("Saved Page Information.");}
 }

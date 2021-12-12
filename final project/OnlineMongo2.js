@@ -348,6 +348,195 @@ function createCallback(req, res) {
   }
 }
 
+
+
+// This is one of the two destination URL's for the jquery $.post functions defined in "OnlineMongoClient2.js"
+//
+// First Parameter : /doInsert completes the URL and identifies the unique
+//                   destination so you can have the desired functionality occur
+//
+// Second Parameter: The callback function.
+//                   The convention is to have it as the last argument in the function call.
+//                   dropThenInsertCallback is run only after server.post has finished and returned a valid
+//                   result with no errors having occured.
+//
+server.post("/doPageCreate", createPageCallback);
+
+// The callback function that is executed when server.post completes its tasks.
+// Note that programmer defined error handling is not required here.
+//
+// First Parameter : req is the request object.
+//                   This object contains another object called body which identifies
+//                   the JSON object, in much the same way a JavaScript variable would.
+//                   see the variable "weatherData" in OnlineMongoClient2.js
+//
+// Second Parameter: res is the result object.
+//
+function createPageCallback(req, res) {
+  // This statement deletes the collection called "weather".
+  //
+  // globalDB              is the reference to the database
+  // collection('weather') is a reference to the collection
+  // drop()                is the function that performs the deletion
+  //                       drop() takes an anonymous callback function as an argument.
+  //                       That is "function(dropError, dropSuccess) {...}".
+  //                       When drop() is finished its tasks, the anonymous callback function is executed.
+  //                           if there was an error, the error object dropError is set.
+  //                           if there were no errors, the result parameter dropSuccess is set.
+  //
+  
+  //get story name which is the collection
+ 
+  story = '{"storyname":"'+req.body.storyname+'"}';
+  var jsonObj = JSON.parse(story);
+  var name = jsonObj.storyname;
+  
+  //get page which will be the reference for inserted documents
+    var pagenum = '{"page":"'+req.body.page+'"}';
+  var jsonObj2 = JSON.parse(pagenum);
+  var page = jsonObj2.page;
+  
+  //**** need to add all fields as above and add into total!!!!
+  var jsonTotal= '{"storyname":"'+req.body.storyname+'","page":"'+req.body.page+'" }'
+  
+  var duplicate = parseInt(req.body.page);
+  console.log("this is the duplicate " + duplicate);
+  var duplicateCheck = globalDB.collection(name).find(duplicate);
+  
+  var dupInDB = globalDB.collection(name).find({page:{$in:[req.body.page]}});
+  
+  console.log("this is the duplicate on server " + dupInDB);
+  console.log("this is start of duplicate check");
+  console.log(duplicateCheck);
+  console.log("this is end of duplicate check");
+  
+  
+  
+  
+  
+  
+  var trial = globalDB.collection(name).findOne({page:1}, {story:0});
+  console.log("this is page1 stuff " + trial);
+  
+  var x = trial.page;
+  console.log(x);
+
+  // This callback function is executed after findOne() has completed all its tasks.
+  //
+  // Parameter 1: If an error occurred, then the error object err is set.
+  //
+  // Parameter 2: If no errors occurred, then the result object foundRecord is set.
+  //
+  // Note       : "res" is global to this function which is defined within the scope of getCallback
+  //
+
+  
+
+    
+  
+  
+  
+  
+  globalDB.collection(name).findOne({"page":page}, findDuplicate);
+  
+    function findDuplicate(err, foundRecord) {
+      if (err == null) {
+      //console.log("FOUND: " + foundRecord.page);
+      console.log("this is record " +foundRecord+ " of foundrecord");
+      if (foundRecord == null)
+      {
+      globalDB.collection(name).insertOne(JSON.parse(jsonTotal), sendPageCallback);
+      }
+      
+      else if (duplicate != foundRecord.page){
+      globalDB.collection(name).insertOne(JSON.parse(jsonTotal), sendPageCallback);
+      console.log(duplicate + " = ? " + foundRecord.page);
+      }
+      else{
+      
+      res.send("duplicate page!");
+      }
+            // This syntax is called chaining.
+      // status(200) sets the HTTP status for the response.
+      // send(foundRecord.temperature) sends the HTTP response.
+      
+    }
+    // Throws the error object containing detailed info
+    else throw err;
+  }
+      // This syntax is called chaining.
+      // status(200) sets the HTTP status for the response.
+      // send(foundRecord.temperature) sends the HTTP response.
+  //    return res.status(200).send(foundRecord.temperature);
+
+  // This callback function is executed after findOne() has completed all its tasks.
+  //
+  // Parameter 1: If an error occurred, then the error object err is set.
+  //
+  // Parameter 2: If no errors occurred, then the result object foundRecord is set.
+  //
+  // Note       : "res" is global to this function which is defined within the scope of getCallback
+  //
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  //globalDB.collection("weather").drop(function (dropError, dropSuccess) {
+    //if (dropSuccess) {
+    // var weatherData = '{"temperature":"' + req.body.temperature + '"}';
+
+  
+  
+      // This statement inserts the document "weatherData" into the newly created collection "weather"
+      //
+      // globalDB              is the reference to the database
+      // collection('weather') is a reference to the collection. The collection of course does not
+      //                       exist at this point, since we dropped it. But insertOne will create it again.
+      // insertOne()           inserts the specfied document into the referenced collection.
+      //                       Parameter 1: The document to be inserted. You must use JSON.parse for
+      //                                    your JSON object "weatherData"
+      //                       Parameter 2: The callback function insertCallback
+      //                                    When insertOne() is finished its tasks, insertCallback is executed.
+      //                                      if an error occurred, then the error object "err" is set.
+      //                                    Note that "res" is global to insertCallback, since insertCallback
+      //                                    is defined within the scope of dropThenInsertCallback.
+      //
+      
+      
+      //globalDB
+      //  .collection("weather")
+      //  .insertOne(JSON.parse(weatherData), insertCallback);
+    //} else if (dropError)
+      // Throws the error object containing detailed info
+    //  throw dropError;
+ // });
+
+  // This callback function is executed after insertOne() has completed all its tasks.
+  //
+  // Parameter 1: If an error occurred, then the error object err is set.
+  //
+  // Note       : "res" is global to this function which is defined within the scope of dropThenInsertCallback
+  //
+  function sendPageCallback(err) {
+    if (err == null)
+      // This syntax is called chaining.
+      // status(200) sets the HTTP status for the response.
+      // send("Insert Successful") sends the HTTP response.
+      return res.status(200).send("Insert Page "+page+" Successful");
+    // Throws the error object containing detailed info
+    else throw new Error(err);
+  }
+}
+
+
+
 // This is one of the two destination URL's for the jquery $.post functions defined in "OnlineMongoClient2.js"
 //
 // First Parameter : /doInsert completes the URL and identifies the unique
