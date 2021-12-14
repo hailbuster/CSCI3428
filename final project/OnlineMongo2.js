@@ -539,6 +539,70 @@ function createPageCallback(req, res) {
 
 // This is one of the two destination URL's for the jquery $.post functions defined in "OnlineMongoClient2.js"
 //
+// First Parameter : /doGet completes the URL and identifies the unique
+//                   destination so you can have the desired functionality occur
+//
+// Second Parameter: The callback function.
+//                   The convention is to have it as the last argument in the function call.
+//                   getCallback is run only after server.post has finished and returned a valid
+//                   result with no errors having occured.
+//
+server.post("/doGetServerInfo", getServerInfoCallback);
+
+// The callback function that is executed when server.post completes its tasks.
+// Note that programmer defined error handling is not required here.
+//
+// First Parameter : req is not used.
+//
+// Second Parameter: res is the result object.
+//
+function getServerInfoCallback(req, res) {
+  // This statement finds the one and only document in the collection called "weather".
+  //
+  // globalDB              is the reference to the database
+  // collection('weather') is a reference to the collection
+  // findOne()             is the function that performs the retrieval of the one and only document
+  //                       Parameter 1: The query string ({} means everything will match the query,
+  //                                    everything in this case, being the one and only document).
+  //                       Parameter 2: The callback function.
+  //                                    The convention is to have it as the last argument in the function call.
+  //                                    findCallback is run only after findOne() has finished all its tasks.
+  //                                        if there was an error, the error object err is set.
+  //                                        if there were no errors, the result parameter foundRecord is set.
+  //                                    Note that "res" is global to findCallback, since findCallback
+  //                                    is defined within the scope of getCallback.
+  console.log("this is storyname: " +req.query.storyname);
+  console.log("this is pagenum: "+req.query.pagenum);
+  //
+  globalDB.collection(req.query.storyname).findOne({page:req.query.pagenum}, findServerInfoCallback);
+
+  // This callback function is executed after findOne() has completed all its tasks.
+  //
+  // Parameter 1: If an error occurred, then the error object err is set.
+  //
+  // Parameter 2: If no errors occurred, then the result object foundRecord is set.
+  //
+  // Note       : "res" is global to this function which is defined within the scope of getCallback
+  //
+  function findServerInfoCallback(err, foundRecord) {
+    if (err == null) {
+      console.log("FOUND: " + foundRecord);
+
+      // This syntax is called chaining.
+      // status(200) sets the HTTP status for the response.
+      // send(foundRecord.temperature) sends the HTTP response.
+      return res.status(200).send(foundRecord);
+    }
+    // Throws the error object containing detailed info
+    else throw err;
+  }
+}
+
+
+
+
+// This is one of the two destination URL's for the jquery $.post functions defined in "OnlineMongoClient2.js"
+//
 // First Parameter : /doInsert completes the URL and identifies the unique
 //                   destination so you can have the desired functionality occur
 //

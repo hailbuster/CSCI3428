@@ -9,6 +9,9 @@ var SERVER_URL = "http://ugdev.cs.smu.ca:3721";
 //total variable is the combined json structure of a page
 var total;
 
+var name = $("#storyname").val();
+  var pagenum = $("#page").val();
+
 
 
 
@@ -158,8 +161,8 @@ function combine(){
   var one = $("#stuff").val().replace('C:\\fakepath\\', '');
   var two = $("#stuff2").val().replace('C:\\fakepath\\', '');
   var three = $("#stuff3").val().replace('C:\\fakepath\\', '');
-  var name = $("#storyname").val();
-  var pagenum = $("#page").val();
+  name = $("#storyname").val();
+  pagenum = $("#page").val();
   var pagenumber = parseInt(pagenum);
 
   total = { start: one, middle: two, end: three, storyname: name, page: pagenumber};
@@ -218,4 +221,55 @@ if (data == "duplicate page!"){
   alert("ERROR: Duplicate page - page info not saved!");
   }
   else {alert("Saved Page Information.");}
+}
+
+
+function getServerInfo() {
+  // define a query string that will return all documents
+  var filler2 = {};
+
+  //var page = {"page":pagenum};
+  //console.log("this is the page num" + page);
+  // jQuery ($) post function
+  //
+  // First Parameter : The complete URL (not just the root).
+  //                   It's important you understand that this URL only exists
+  //                   because OnlineMongo2.js is running on the server.
+  //
+  // Second Parameter: The JSON object to be used as the query string.
+  //
+  // Third Parameter : The callback function.
+  //                   The convention is to have it as the last argument in the function call.
+  //                   getCallback is run only after $.post has finished and returned a valid
+  //                   result with no errors having occured.
+  //
+  // Special Notes   : .fail(errorCallback) is executed when there is an error that occured.
+  //                   This is a syntax particular to jQuery used on the client-side,
+  //                   that you won't see on the server-side. Errors are handled
+  //                   differently on the server-side.
+  
+  name = $("#storyname").val();
+  var storyString = ("/?storyname=" + name);
+
+  pagenum = $("#page").val();
+  console.log(pagenum);
+  
+  var pagenumString = ("&pagenum="+pagenum);
+  console.log(pagenumString);
+  
+  
+  //
+  $.post(SERVER_URL + "/doGetServerInfo"+storyString+pagenumString, filler2, getServerInfoCallback).fail(errorCallback);
+}
+
+// The callback function called getCallback executed when no errors occur.
+//
+// First Parameter : data is the JSON object received from the server.
+//                   The special relationship callbacks have with the function
+//                   in which they appear as the last argument, enables the
+//                   JSON object "data" to be defined and used the way it is.
+//
+function getServerInfoCallback(data) {
+  console.log("URL ending with /doGetServerInfo returned " + data);
+  document.getElementById("getServ").innerHTML = data.page;
 }
