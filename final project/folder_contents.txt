@@ -1,25 +1,85 @@
 BASE DIRECTORY:
 
-To be updated from Phase IV code submission to final code submission.
+To be updated from current code submission to final code submission.  Notes on progress/functionality listed at bottom.
 
 
-mongotest - directory composed of the files you gave me and other works to get connection.  
+main - directory composed of the files you gave me and other works to get connection.  
 	Also updated jquery and downloaded proper 3.4.1 doc.
+	-updated with the following:
+	onlineMongoClient2.html - This has been my work as the form page
+	onlineMongoClient2.css - some ideas for creating a check box / x for correct input
+	onlineMongoCleint2.js - javascript file for the form (also used as trial for feedback from server)
+	onlineMongo2.js - main server for the project
+	audiotest.html - some of my testing of audio code I found to try to implement
+
+MongoDb - required files for mongodb
+node_modules - required files for nodejs / express
+
 
 public_html - main group folder for docs
-	node_quickstart - folder working on mongo as well
-	Pages - did a bit of work on chap2page1.html (plan is to revamp and tie last page into the single html doc instead of what's currently there)
+	.vs, book-selection - Yumu's react work
+	CSS - styles.css is the main css file which I was involved in 30% or so.  It's been modified over time.
+		-style.css was the main file until we started going through phases.  
+		You can view some of the work I did - all comments that talk about removal from 
+		inline was work other students had that was inline and I converted to be 
+		implemented in CSS doc.  Also did some minor adjustments to images and 3-4 other 
+		css group modifications.  Group didn't carry over my comments from style.css to new styles.css
+		for some reason.  I just updated styles.css with comments when I created things and modified
+		items within their structure.
+		-raisa1, style1-4 were Raisa's designs
+		-styles(old).css was an older version of the styles.css from prior phase (I like using these as 
+		reference when working on updating files)
+		-styles-end (both files) were composed by both James and Yumu if memory serves correct
+	Images - images for the story
+	Pages - did a bit of work on chap2page1.html (plan is to revamp and tie last page into the single 
+		html doc instead of chap2page1.html AND chap2end-.html for the story)
+		chap1page1-5 is the hardcoded story.
+		NOTE:  never received any of the updated files/story/audio so continuing on with what I have so far
 	Scripts - more mongo/node testing and server files
-		- db.js, P4Server.js, quickServ.js and server.js are files I was working on
+		- db.js, P4Server.js, quickServ.js, nodeServer.js and server.js are files I was working on.
+		-P4Server.js was the transition nodejs server from hardcoded files/text to pulling info from nodejs server.
+			only contribution to coding came from James wanting one or two text options updated. 
 		- index.js is composed by myself and Yumu's contribution of the last page tie in.
 		- testdel.sh (test deletion shell script to atlas - works)
 		- testfind.sh (test find shell script to atlas - works)
 		- testpost.sh (test post shell script to atlas - works)
-
+		- indexA.js looks like someone trying to look at some of my other coding.  I'd modified James' original 
+		options menu, added the option to be displayed in a text box, added audio depending on the 
+		selection and changed the inline alert popups for english text.  This shows most of stuff I'd 
+		done prior...maybe one of the other students reviewing my work?
+		-index(old).js - older phase javascript - like I said, I like keeping these for reference
+		-photoRotation.js - something that James provided.  May have been modified/used in current index.js by Yumu
+public_html (OLD) - copy of original but kept as reference so I could work on html/css/js pages 
 React - Yumu's work (kept for the intro/page selection)
-Scripts - old scripts files(this includes the images that were numbered in order to have an easier time to select/sort/find through index.js.  
-	These were the files I believed the team already stored in phase 4 folder on the shared drive.
-Server - copy of the node server I created (based on mobile app's designs)
-main.py - server connections from another class
-mongoDB(local) - copy of my local work with the mongodb
-npm-debug.log is logs from installations etc
+tmp - temporary folder when uploading files
+uploads - main folder to house uploaded files
+
+PROGRESS/FUNCTIONALITY
+
+public_html/index.html - main page to bring up storybook - little modification yet but looking to update html/javascript so it performs properly
+			and pulls from the mongodb story.
+OnlineMongoClient2.html - main forms page.  This is alot of what I was working on - to provide the clients with the ability to update and
+			modify their own stories.
+				Create New Story - creates a collection (functioning) can do any story besides "story1" which is in use
+				Upload All Files - place to upload all files used (pictures an audio) - this goes to the uploads folder (functioning)
+				Link Files And Text To Story Pages - REQ: storyname, page number.  This loads whole page selection at once with "combine and send 
+				to server" button...it creates the basic page(functioning)
+					- "update" will update single elements if a page already exists (use "story1" for story name and "1" for page, then can input on any line)
+					- "Remove" will remove single elements if a page already exists (as above, this will remove object input from the database)
+				Info from server - I had it working but I've been copying stuff and must have overwritten it using html-kit.  
+					Seen this happen a few times where it seems to cut instead of copying.  Will have to redo the server call but 
+					I'm confident I can get it working again.  I basically had it send the proper page as a json object back to the javascript file 
+					can distribute all values into the html from there as needed.
+					UPDATE: this works - was able to copy over the function call from backups.  (use story1 and page 1 then hit "Info from server" button
+					This will pull the page in json format and display the page number (1).  seen in onlineMongoClient2.js around line 678.
+					Again, just need to have this implemented in index.js and update chap2page1.html. 
+
+Future Work:
+	
+	Clean up the form with an option/selection menu (ie. option1 - update page, option 2 update page elements, option3 remove page elements, option4 create new story)
+	reimplement "Info from server" button on onlineMongo2.js
+	Clean up html page and tie Info from server into working product.
+	Introduce new intro page to select stories
+	Introduce audio recording
+	
+	

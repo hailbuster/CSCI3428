@@ -1,64 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Online Mongo Client 2</title>
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta charset="utf-8" />
-
+    <title>
+      Online Mongo Client 2
+    </title>
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
     <!--<link rel="stylesheet" href="./css/bootstrap.min.css" />
     -->
-    <script src="./jquery-3.4.1.min.js"></script>
-   
+    <link rel="stylesheet" href="./OnlineMongoClient2.css">
+    <script src="./jquery-3.4.1.min.js">
+</script>
+    <script src="./OnlineMongoClient2.js">
+</script>
+  </head><!--Group 7 / Group 17 Authors:
+  
+  Original file created by Terry Goldsmith
+  Jonathan Boyd (A00410716)
+  
+  
+  
+  ======================== OnlineMongoClient2.html ============================
+  Due: end of term, fall 2021
+  This HTML submission is Phase IV of Software Engineering.
+  We are creating a web-based storybook designed to assist in learning the 
+  Mi'kmaq language.  The storybook will contain an initial menu page, three 
+  choose-from-3 option pages and a final page that plays the story chosen.  It 
+  should integrate pictures, text and audio to immerse the students in an 
+  interactive environment.
+  This HTML page is the form used to update the mongoDB database for all the 
+  story content and updates. 
+  This software will use Java, JavaScript, Html5, CSS3 and react.js. There will
+  be audio for the words to be played so that users can correctly speak the 
+  words. HTML5 and CSS3 will be used to design the pages with visual inputs 
+  such as pictures. JavaScript will be used for page interaction such as words
+  and audio.  Nodejs/react.js will be used for server/backend development.
+  
+  == Contents ==
+    head
+    body
+      Create New Story - creates a collection
+      Upload All Files - upload multiple files to server
+      Link Files And Text To Story Pages 
+        - creates a page (document) in user defined collection
+            update 
+              - updates single field entry data
+                for user defined collection and page
+            remove
+             - removes single filed entry data 
+                for user defined collection and page
+      Info From Server 
+        - page (document) returned to javascript
+           and page number displayed in html
     
-    
-    
-    <script src="./OnlineMongoClient2.js"></script>
-  </head>
-
+-->
   <body>
     <div data-role="page">
       <div data-role="header">
-        <h1>Online Mongo Client 2</h1>
+        <h1>
+          Create New Story
+        </h1>
       </div>
-
       <div data-role="content">
         <div data-role="controlgroup">
-          <input type="text" id="wthr" />
-          <button type="button" class="btn-danger" onclick="set()">Upload Weather Data</button>
-          <button type="button" class="btn-success" onclick="get()">Download Previous Weather</button>
-          <button type="button" class="btn-create" onclick="create()">Create story</button>
-	  <div id="text1">this is the div</div>
-        </div>
-        <!--div used for file transfer-->
+          <input type="text" placeholder="new story name" id="wthr">
+          <button type="button" class="btn-danger" onclick="set()">Upload
+          Weather Data</button> <button type="button" class="btn-success"
+          onclick="get()">Download Previous Weather</button>
+          <button type="button" class="btn-create" onclick=
+          "create()">Create story</button>
+          <div id="text1">
+            this is the div
+          </div>
+        </div><!--div used for file transfer-->
         <div>
-        <h1>File Upload</h1>
-        
-        <form action="http://ugdev.cs.smu.ca:3721/upload" method = "post" enctype = "multipart/form-data">
-          <input type = "file" name="mfile" id="uploadInputField" required multiple/>
-          <input type = "submit" value="upload"/>
-        </form>
-        <input type = "file" name="mfile" id="stuff"/>
-      
-       <input type = "file" name="mfile" id="stuff2"/>
-       <input type = "file" name="mfile" id="stuff3"/>
-        <button type = "button" onclick="combine()">this stuff</button>
-        <div>storyname</div>
-        <input type="text" id="storyname" />
-        <div>page number</div>
-         <input type="text" id="page" />
-        <div>info from server</div>
-        <button type = "button" onclick="getServerInfo()">Info from server</button>
-     <div id="getServ"></div>
-         
-        
+          <h1>
+            Upload All Files
+          </h1>
+          <form action="http://ugdev.cs.smu.ca:3721/upload" method="post"
+          enctype="multipart/form-data">
+            <input type="file" name="mfile" id="uploadInputField"
+            required=""> <input type="submit" value="upload">
+          </form>
+          <h1>
+            Link Files And Text To Story Pages
+          </h1>
+          <div>
+            storyname
+          </div><input type="text" placeholder="Please fill in" id=
+          "storyname">
+          <div>
+            page number
+          </div><input type="text" placeholder="Please fill in" id=
+          "page">
+          <div>
+            page title
+          </div><input type="text" id="pagetitle">    <button class=
+          "unhideToUpdate" name="options" value="pagetitleupdate"
+          onclick="pageTitleUpdate()">Update</button> <button class=
+          "unhideToRemove" onclick=
+          "pageTitleRemove()">Remove</button><br>
+          <br>
+          <table>
+            <tr>
+              <td>
+                Main Story Picture
+              </td>
+              <td>
+                First Option Picture
+              </td>
+              <td>
+                Second Option Picture
+              </td>
+              <td>
+                Third Option Picture
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="file" id="mainStoryPic">    <button class=
+                "unhideToUpdate" name="options" value=
+                "mainstorypicupdate" onclick=
+                "mainStoryPicUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "mainStoryPicRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opOnePic">    <button class=
+                "unhideToUpdate" onclick=
+                "opOnePicUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opOnePicRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opTwoPic">    <button class=
+                "unhideToUpdate" onclick=
+                "opTwoPicUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opTwoPicRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opThreePic">    <button class=
+                "unhideToUpdate" onclick=
+                "opThreePicUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opThreePicRemove()">Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Main Story Audio
+              </td>
+              <td>
+                First Option Audio
+              </td>
+              <td>
+                Second Option Audio
+              </td>
+              <td>
+                Third Option Audio
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="file" id="mainAudio">    <button class=
+                "unhideToUpdate" onclick=
+                "mainAudioUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "mainAudioRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opOneAudio">    <button class=
+                "unhideToUpdate" onclick=
+                "opOneAudioUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opOneAudioRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opTwoAudio">    <button class=
+                "unhideToUpdate" onclick=
+                "opTwoAudioUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opTwoAudioRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="file" id="opThreeAudio">    <button class=
+                "unhideToUpdate" onclick=
+                "opThreeAudioUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opThreeAudioRemove()">Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Main Story Text
+              </td>
+              <td>
+                First Option Text
+              </td>
+              <td>
+                Second Option Text
+              </td>
+              <td>
+                Third Option Text
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" id="mainText">    <button class=
+                "unhideToUpdate" onclick=
+                "mainTextUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "mainTextRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="text" id="opOneText">    <button class=
+                "unhideToUpdate" onclick=
+                "opOneTextUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opOneTextRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="text" id="opTwoText">    <button class=
+                "unhideToUpdate" onclick=
+                "opTwoTextUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opTwoTextRemove()">Remove</button>
+              </td>
+              <td>
+                <input type="text" id="opThreeText">    <button class=
+                "unhideToUpdate" onclick=
+                "opThreeTextUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "opThreeTextRemove()">Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                English Hint
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" id="englishHint">    <button class=
+                "unhideToUpdate" onclick=
+                "englishHintUpdate()">Update</button> <button class=
+                "unhideToRemove" onclick=
+                "englishHintRemove()">Remove</button>
+              </td>
+            </tr>
+          </table><br>
+          <br>
+          <button type="button" onclick="combine()">combine and send to
+          server</button><br>
+          <br>
+          <h1>
+            Info From Server
+          </h1><button type="button" onclick="getServerInfo()">Info from
+          server</button>
+          <div id="getServ"></div>
         </div>
-        <div>server weather and numbers</div>
+        <div>
+          server weather and numbers
+        </div>
         <div id="out"></div>
-        
       </div>
     </div>
   </body>
